@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cafe Crème Brûlée</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="#menu">Menu</a></li>
-                <li><a href="#">Visit Us</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
     </header>
@@ -22,60 +25,65 @@
         <p>We create joyful moments by sharing food with love</p>
     </section>
 
-
     <section id="menu" class="menu">
         <h2 style="color: #b5651d;">Our Menu</h2>
         <div class="grid">
-            <div class="card">
+            <div class="card" onclick="openModal('cappuccino.jpg', 'Cappuccino', 'A classic blend of espresso and steamed milk.')">
                 <img src="cappuccino.jpg" alt="cappuccino">
                 <h3>Cappuccino</h3>
                 <p>A classic blend of espresso and steamed milk.</p>
             </div>
-            <div class="card">
+            <div class="card" onclick="openModal('latte.jpg', 'Latte', 'A smooth and creamy blend of espresso and steamed milk, topped with delicate foam.')">
                 <img src="latte.jpg" alt="latte">
                 <h3>Latte</h3>
                 <p>A smooth and creamy blend of espresso and steamed milk, topped with delicate foam.</p>
             </div>
-
-            <div class="card">
+            <div class="card" onclick="openModal('espresso.jpg', 'Espresso', 'A rich, concentrated coffee shot with a bold, intense flavor.')">
                 <img src="espresso.jpg" alt="espresso">
                 <h3>Espresso</h3>
                 <p>A rich, concentrated coffee shot with a bold, intense flavor.</p>
             </div>
-            <div class="card">
+            <div class="card" onclick="openModal('cremeBrulee.png', 'Creme Brulee', 'A creamy vanilla custard topped with a crisp, caramelized sugar crust.')">
                 <img src="cremeBrulee.png" alt="Creme Brulee">
                 <h3>Creme Brulee</h3>
                 <p>A creamy vanilla custard topped with a crisp, caramelized sugar crust.</p>
             </div>
-            <div class="card">
+            <div class="card" onclick="openModal('tiramisu.jpeg', 'Tiramisu', 'A layered Italian dessert combining espresso-soaked ladyfingers with mascarpone cream and cocoa.')">
                 <img src="tiramisu.jpeg" alt="tiramisu">
                 <h3>Tiramisu</h3>
-                <p>A layered Italian dessert combining espresso-soaked ladyfingers with mascarpone cream and cocoa.
-                </p>
+                <p>A layered Italian dessert combining espresso-soaked ladyfingers with mascarpone cream and cocoa.</p>
             </div>
-            <div class="card">
+            <div class="card" onclick="openModal('waffle.jpg', 'Waffle', 'Fluffy, crisp waffle drizzled with decadent chocolate topped with fresh blueberries.')">
                 <img src="waffle.jpg" alt="waffle">
                 <h3>Waffle</h3>
                 <p>Fluffy, crisp waffle drizzled with decadent chocolate topped with fresh blueberries.</p>
             </div>
-            <div class="card">
+            <div class="card" onclick="openModal('toast.jpg', 'Avocado Toast', 'Toasted bread spread with creamy, seasoned avocado, topped with eggs and herbs.')">
                 <img src="toast.jpg" alt="toast">
-                <h3>Avacado Toast</h3>
+                <h3>Avocado Toast</h3>
                 <p>Toasted bread spread with creamy, seasoned avocado, topped with eggs and herbs.</p>
             </div>
-            
-
-            <div class="card">
+            <div class="card" onclick="openModal('pasta.jpg', 'Pasta', 'Savory noodles enveloped in a rich, flavorful sauce.')">
                 <img src="pasta.jpg" alt="Pasta">
                 <h3>Pasta</h3>
-                <p> Savory noodles enveloped in a rich, flavorful sauce.</p>
+                <p>Savory noodles enveloped in a rich, flavorful sauce.</p>
             </div>
-            <div class="card">
+            <div class="card" onclick="openModal('pizza.jpg', 'Pizza', 'Crispy, cheesy delight with a golden crust and a medley of toppings, baked to perfection.')">
                 <img src="pizza.jpg" alt="Pizza">
                 <h3>Pizza</h3>
                 <p>Crispy, cheesy delight with a golden crust and a medley of toppings, baked to perfection.</p>
             </div>
         </div>
     </section>
+
+    <!-- Modal Structure -->
+    <div id="menuModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="modalCaption" class="caption"></div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
